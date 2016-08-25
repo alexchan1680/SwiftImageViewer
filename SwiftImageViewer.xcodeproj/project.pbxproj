@@ -1,0 +1,805 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA0941AB1D6F44F600275222 /* SwiftImageViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0941A11D6F44F600275222 /* SwiftImageViewer.framework */; };
+		FA0941B01D6F44F600275222 /* SwiftImageViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0941AF1D6F44F600275222 /* SwiftImageViewerTests.swift */; };
+		FA0941B21D6F44F600275222 /* SwiftImageViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = FA0941A41D6F44F600275222 /* SwiftImageViewer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA0941C21D6F452A00275222 /* CGRectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0941BB1D6F452A00275222 /* CGRectExtension.swift */; };
+		FA0941C31D6F452A00275222 /* SIVDefaultImageLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0941BC1D6F452A00275222 /* SIVDefaultImageLoadingView.swift */; };
+		FA0941C41D6F452A00275222 /* SIVImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0941BD1D6F452A00275222 /* SIVImageViewController.swift */; };
+		FA0941C51D6F452A00275222 /* SIVScalingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0941BE1D6F452A00275222 /* SIVScalingImageView.swift */; };
+		FA0941C61D6F452A00275222 /* SIVThrottledClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0941BF1D6F452A00275222 /* SIVThrottledClosure.swift */; };
+		FA0941C71D6F452A00275222 /* SIVTypesDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0941C01D6F452A00275222 /* SIVTypesDefinition.swift */; };
+		FA0941C81D6F452A00275222 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0941C11D6F452A00275222 /* UIImageViewExtension.swift */; };
+		FA0941D41D6F47B400275222 /* MRCircularProgressView.h in Headers */ = {isa = PBXBuildFile; fileRef = FA0941CA1D6F47B400275222 /* MRCircularProgressView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA0941D51D6F47B400275222 /* MRCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0941CB1D6F47B400275222 /* MRCircularProgressView.m */; };
+		FA0941D61D6F47B400275222 /* MRIconView.h in Headers */ = {isa = PBXBuildFile; fileRef = FA0941CC1D6F47B400275222 /* MRIconView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA0941D71D6F47B400275222 /* MRIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0941CD1D6F47B400275222 /* MRIconView.m */; };
+		FA0941D81D6F47B400275222 /* MRProgressHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = FA0941CE1D6F47B400275222 /* MRProgressHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA0941D91D6F47B400275222 /* MRProgressView.h in Headers */ = {isa = PBXBuildFile; fileRef = FA0941CF1D6F47B400275222 /* MRProgressView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA0941DA1D6F47B400275222 /* MRProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0941D01D6F47B400275222 /* MRProgressView.m */; };
+		FA0941DB1D6F47B400275222 /* MRStopableView.h in Headers */ = {isa = PBXBuildFile; fileRef = FA0941D11D6F47B400275222 /* MRStopableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA0941DC1D6F47B400275222 /* MRStopButton.h in Headers */ = {isa = PBXBuildFile; fileRef = FA0941D21D6F47B400275222 /* MRStopButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA0941DD1D6F47B400275222 /* MRStopButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0941D31D6F47B400275222 /* MRStopButton.m */; };
+		FA0941E51D6F490400275222 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0941E41D6F490400275222 /* AppDelegate.swift */; };
+		FA0941EA1D6F490400275222 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0941E81D6F490400275222 /* Main.storyboard */; };
+		FA0941EC1D6F490400275222 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA0941EB1D6F490400275222 /* Assets.xcassets */; };
+		FA0941EF1D6F490400275222 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0941ED1D6F490400275222 /* LaunchScreen.storyboard */; };
+		FA0941FA1D6F490500275222 /* SwiftImageViewerExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0941F91D6F490500275222 /* SwiftImageViewerExampleTests.swift */; };
+		FA0942031D6F4BF400275222 /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0942021D6F4BF400275222 /* RootTableViewController.swift */; };
+		FA0942051D6F4D3100275222 /* ImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0942041D6F4D3100275222 /* ImagesViewController.swift */; };
+		FA0942061D6F4DE700275222 /* SwiftImageViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0941A11D6F44F600275222 /* SwiftImageViewer.framework */; };
+		FA0942071D6F4DE700275222 /* SwiftImageViewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA0941A11D6F44F600275222 /* SwiftImageViewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA09420C1D6F4E3900275222 /* ImageSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA09420B1D6F4E3900275222 /* ImageSources.swift */; };
+		FA0942101D6F4EBA00275222 /* UIImage+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA09420F1D6F4EBA00275222 /* UIImage+Utility.swift */; };
+		FA0942171D6F4F3900275222 /* image0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA0942121D6F4F3900275222 /* image0.jpg */; };
+		FA0942181D6F4F3900275222 /* image1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA0942131D6F4F3900275222 /* image1.jpg */; };
+		FA0942191D6F4F3900275222 /* image2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA0942141D6F4F3900275222 /* image2.jpg */; };
+		FA09421A1D6F4F3900275222 /* image3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA0942151D6F4F3900275222 /* image3.jpg */; };
+		FA09421B1D6F4F3900275222 /* image4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA0942161D6F4F3900275222 /* image4.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA0941AC1D6F44F600275222 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA0941981D6F44F600275222 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA0941A01D6F44F600275222;
+			remoteInfo = SwiftImageViewer;
+		};
+		FA0941F61D6F490400275222 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA0941981D6F44F600275222 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA0941E11D6F490400275222;
+			remoteInfo = SwiftImageViewerExample;
+		};
+		FA0942081D6F4DE700275222 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA0941981D6F44F600275222 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA0941A01D6F44F600275222;
+			remoteInfo = SwiftImageViewer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FA09420A1D6F4DE700275222 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FA0942071D6F4DE700275222 /* SwiftImageViewer.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FA0941A11D6F44F600275222 /* SwiftImageViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftImageViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA0941A41D6F44F600275222 /* SwiftImageViewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftImageViewer.h; sourceTree = "<group>"; };
+		FA0941A51D6F44F600275222 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA0941AA1D6F44F600275222 /* SwiftImageViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftImageViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA0941AF1D6F44F600275222 /* SwiftImageViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftImageViewerTests.swift; sourceTree = "<group>"; };
+		FA0941B11D6F44F600275222 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA0941BB1D6F452A00275222 /* CGRectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectExtension.swift; sourceTree = "<group>"; };
+		FA0941BC1D6F452A00275222 /* SIVDefaultImageLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIVDefaultImageLoadingView.swift; sourceTree = "<group>"; };
+		FA0941BD1D6F452A00275222 /* SIVImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIVImageViewController.swift; sourceTree = "<group>"; };
+		FA0941BE1D6F452A00275222 /* SIVScalingImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIVScalingImageView.swift; sourceTree = "<group>"; };
+		FA0941BF1D6F452A00275222 /* SIVThrottledClosure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIVThrottledClosure.swift; sourceTree = "<group>"; };
+		FA0941C01D6F452A00275222 /* SIVTypesDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIVTypesDefinition.swift; sourceTree = "<group>"; };
+		FA0941C11D6F452A00275222 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		FA0941CA1D6F47B400275222 /* MRCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRCircularProgressView.h; sourceTree = "<group>"; };
+		FA0941CB1D6F47B400275222 /* MRCircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRCircularProgressView.m; sourceTree = "<group>"; };
+		FA0941CC1D6F47B400275222 /* MRIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRIconView.h; sourceTree = "<group>"; };
+		FA0941CD1D6F47B400275222 /* MRIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRIconView.m; sourceTree = "<group>"; };
+		FA0941CE1D6F47B400275222 /* MRProgressHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRProgressHelper.h; sourceTree = "<group>"; };
+		FA0941CF1D6F47B400275222 /* MRProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRProgressView.h; sourceTree = "<group>"; };
+		FA0941D01D6F47B400275222 /* MRProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRProgressView.m; sourceTree = "<group>"; };
+		FA0941D11D6F47B400275222 /* MRStopableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRStopableView.h; sourceTree = "<group>"; };
+		FA0941D21D6F47B400275222 /* MRStopButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRStopButton.h; sourceTree = "<group>"; };
+		FA0941D31D6F47B400275222 /* MRStopButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRStopButton.m; sourceTree = "<group>"; };
+		FA0941E21D6F490400275222 /* SwiftImageViewerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftImageViewerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA0941E41D6F490400275222 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FA0941E91D6F490400275222 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FA0941EB1D6F490400275222 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA0941EE1D6F490400275222 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FA0941F01D6F490400275222 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA0941F51D6F490400275222 /* SwiftImageViewerExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftImageViewerExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA0941F91D6F490500275222 /* SwiftImageViewerExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftImageViewerExampleTests.swift; sourceTree = "<group>"; };
+		FA0941FB1D6F490500275222 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA0942021D6F4BF400275222 /* RootTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
+		FA0942041D6F4D3100275222 /* ImagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesViewController.swift; sourceTree = "<group>"; };
+		FA09420B1D6F4E3900275222 /* ImageSources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSources.swift; sourceTree = "<group>"; };
+		FA09420F1D6F4EBA00275222 /* UIImage+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Utility.swift"; sourceTree = "<group>"; };
+		FA0942121D6F4F3900275222 /* image0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image0.jpg; sourceTree = "<group>"; };
+		FA0942131D6F4F3900275222 /* image1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image1.jpg; sourceTree = "<group>"; };
+		FA0942141D6F4F3900275222 /* image2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image2.jpg; sourceTree = "<group>"; };
+		FA0942151D6F4F3900275222 /* image3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image3.jpg; sourceTree = "<group>"; };
+		FA0942161D6F4F3900275222 /* image4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image4.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA09419D1D6F44F600275222 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA0941A71D6F44F600275222 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA0941AB1D6F44F600275222 /* SwiftImageViewer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA0941DF1D6F490400275222 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA0942061D6F4DE700275222 /* SwiftImageViewer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA0941F21D6F490400275222 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA0941971D6F44F600275222 = {
+			isa = PBXGroup;
+			children = (
+				FA0941A31D6F44F600275222 /* SwiftImageViewer */,
+				FA0941AE1D6F44F600275222 /* SwiftImageViewerTests */,
+				FA0941E31D6F490400275222 /* SwiftImageViewerExample */,
+				FA0941F81D6F490400275222 /* SwiftImageViewerExampleTests */,
+				FA0941A21D6F44F600275222 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FA0941A21D6F44F600275222 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA0941A11D6F44F600275222 /* SwiftImageViewer.framework */,
+				FA0941AA1D6F44F600275222 /* SwiftImageViewerTests.xctest */,
+				FA0941E21D6F490400275222 /* SwiftImageViewerExample.app */,
+				FA0941F51D6F490400275222 /* SwiftImageViewerExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA0941A31D6F44F600275222 /* SwiftImageViewer */ = {
+			isa = PBXGroup;
+			children = (
+				FA0941C91D6F47B400275222 /* MRProgressView */,
+				FA0941BB1D6F452A00275222 /* CGRectExtension.swift */,
+				FA0941BC1D6F452A00275222 /* SIVDefaultImageLoadingView.swift */,
+				FA0941BD1D6F452A00275222 /* SIVImageViewController.swift */,
+				FA0941BE1D6F452A00275222 /* SIVScalingImageView.swift */,
+				FA0941BF1D6F452A00275222 /* SIVThrottledClosure.swift */,
+				FA0941C01D6F452A00275222 /* SIVTypesDefinition.swift */,
+				FA0941C11D6F452A00275222 /* UIImageViewExtension.swift */,
+				FA0941A41D6F44F600275222 /* SwiftImageViewer.h */,
+				FA0941A51D6F44F600275222 /* Info.plist */,
+			);
+			path = SwiftImageViewer;
+			sourceTree = "<group>";
+		};
+		FA0941AE1D6F44F600275222 /* SwiftImageViewerTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA0941AF1D6F44F600275222 /* SwiftImageViewerTests.swift */,
+				FA0941B11D6F44F600275222 /* Info.plist */,
+			);
+			path = SwiftImageViewerTests;
+			sourceTree = "<group>";
+		};
+		FA0941C91D6F47B400275222 /* MRProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				FA0941CA1D6F47B400275222 /* MRCircularProgressView.h */,
+				FA0941CB1D6F47B400275222 /* MRCircularProgressView.m */,
+				FA0941CC1D6F47B400275222 /* MRIconView.h */,
+				FA0941CD1D6F47B400275222 /* MRIconView.m */,
+				FA0941CE1D6F47B400275222 /* MRProgressHelper.h */,
+				FA0941CF1D6F47B400275222 /* MRProgressView.h */,
+				FA0941D01D6F47B400275222 /* MRProgressView.m */,
+				FA0941D11D6F47B400275222 /* MRStopableView.h */,
+				FA0941D21D6F47B400275222 /* MRStopButton.h */,
+				FA0941D31D6F47B400275222 /* MRStopButton.m */,
+			);
+			path = MRProgressView;
+			sourceTree = "<group>";
+		};
+		FA0941E31D6F490400275222 /* SwiftImageViewerExample */ = {
+			isa = PBXGroup;
+			children = (
+				FA0942111D6F4F3900275222 /* SampleImages */,
+				FA0941E41D6F490400275222 /* AppDelegate.swift */,
+				FA0941E81D6F490400275222 /* Main.storyboard */,
+				FA0941EB1D6F490400275222 /* Assets.xcassets */,
+				FA0941ED1D6F490400275222 /* LaunchScreen.storyboard */,
+				FA0941F01D6F490400275222 /* Info.plist */,
+				FA0942021D6F4BF400275222 /* RootTableViewController.swift */,
+				FA0942041D6F4D3100275222 /* ImagesViewController.swift */,
+				FA09420B1D6F4E3900275222 /* ImageSources.swift */,
+				FA09420F1D6F4EBA00275222 /* UIImage+Utility.swift */,
+			);
+			path = SwiftImageViewerExample;
+			sourceTree = "<group>";
+		};
+		FA0941F81D6F490400275222 /* SwiftImageViewerExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA0941F91D6F490500275222 /* SwiftImageViewerExampleTests.swift */,
+				FA0941FB1D6F490500275222 /* Info.plist */,
+			);
+			path = SwiftImageViewerExampleTests;
+			sourceTree = "<group>";
+		};
+		FA0942111D6F4F3900275222 /* SampleImages */ = {
+			isa = PBXGroup;
+			children = (
+				FA0942121D6F4F3900275222 /* image0.jpg */,
+				FA0942131D6F4F3900275222 /* image1.jpg */,
+				FA0942141D6F4F3900275222 /* image2.jpg */,
+				FA0942151D6F4F3900275222 /* image3.jpg */,
+				FA0942161D6F4F3900275222 /* image4.jpg */,
+			);
+			path = SampleImages;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		FA09419E1D6F44F600275222 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA0941DB1D6F47B400275222 /* MRStopableView.h in Headers */,
+				FA0941D81D6F47B400275222 /* MRProgressHelper.h in Headers */,
+				FA0941D61D6F47B400275222 /* MRIconView.h in Headers */,
+				FA0941D91D6F47B400275222 /* MRProgressView.h in Headers */,
+				FA0941D41D6F47B400275222 /* MRCircularProgressView.h in Headers */,
+				FA0941DC1D6F47B400275222 /* MRStopButton.h in Headers */,
+				FA0941B21D6F44F600275222 /* SwiftImageViewer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		FA0941A01D6F44F600275222 /* SwiftImageViewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA0941B51D6F44F600275222 /* Build configuration list for PBXNativeTarget "SwiftImageViewer" */;
+			buildPhases = (
+				FA09419C1D6F44F600275222 /* Sources */,
+				FA09419D1D6F44F600275222 /* Frameworks */,
+				FA09419E1D6F44F600275222 /* Headers */,
+				FA09419F1D6F44F600275222 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftImageViewer;
+			productName = SwiftImageViewer;
+			productReference = FA0941A11D6F44F600275222 /* SwiftImageViewer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FA0941A91D6F44F600275222 /* SwiftImageViewerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA0941B81D6F44F600275222 /* Build configuration list for PBXNativeTarget "SwiftImageViewerTests" */;
+			buildPhases = (
+				FA0941A61D6F44F600275222 /* Sources */,
+				FA0941A71D6F44F600275222 /* Frameworks */,
+				FA0941A81D6F44F600275222 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA0941AD1D6F44F600275222 /* PBXTargetDependency */,
+			);
+			name = SwiftImageViewerTests;
+			productName = SwiftImageViewerTests;
+			productReference = FA0941AA1D6F44F600275222 /* SwiftImageViewerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FA0941E11D6F490400275222 /* SwiftImageViewerExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA0941FC1D6F490500275222 /* Build configuration list for PBXNativeTarget "SwiftImageViewerExample" */;
+			buildPhases = (
+				FA0941DE1D6F490400275222 /* Sources */,
+				FA0941DF1D6F490400275222 /* Frameworks */,
+				FA0941E01D6F490400275222 /* Resources */,
+				FA09420A1D6F4DE700275222 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA0942091D6F4DE700275222 /* PBXTargetDependency */,
+			);
+			name = SwiftImageViewerExample;
+			productName = SwiftImageViewerExample;
+			productReference = FA0941E21D6F490400275222 /* SwiftImageViewerExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FA0941F41D6F490400275222 /* SwiftImageViewerExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA0941FF1D6F490500275222 /* Build configuration list for PBXNativeTarget "SwiftImageViewerExampleTests" */;
+			buildPhases = (
+				FA0941F11D6F490400275222 /* Sources */,
+				FA0941F21D6F490400275222 /* Frameworks */,
+				FA0941F31D6F490400275222 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA0941F71D6F490400275222 /* PBXTargetDependency */,
+			);
+			name = SwiftImageViewerExampleTests;
+			productName = SwiftImageViewerExampleTests;
+			productReference = FA0941F51D6F490400275222 /* SwiftImageViewerExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA0941981D6F44F600275222 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				TargetAttributes = {
+					FA0941A01D6F44F600275222 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = ZS6GR53VE2;
+						DevelopmentTeamName = "Just Two Dudes LLC";
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+					};
+					FA0941A91D6F44F600275222 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = ZS6GR53VE2;
+						DevelopmentTeamName = "Just Two Dudes LLC";
+						ProvisioningStyle = Automatic;
+					};
+					FA0941E11D6F490400275222 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = ZS6GR53VE2;
+						DevelopmentTeamName = "Just Two Dudes LLC";
+						ProvisioningStyle = Automatic;
+					};
+					FA0941F41D6F490400275222 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = ZS6GR53VE2;
+						DevelopmentTeamName = "Just Two Dudes LLC";
+						ProvisioningStyle = Automatic;
+						TestTargetID = FA0941E11D6F490400275222;
+					};
+				};
+			};
+			buildConfigurationList = FA09419B1D6F44F600275222 /* Build configuration list for PBXProject "SwiftImageViewer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA0941971D6F44F600275222;
+			productRefGroup = FA0941A21D6F44F600275222 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA0941A01D6F44F600275222 /* SwiftImageViewer */,
+				FA0941A91D6F44F600275222 /* SwiftImageViewerTests */,
+				FA0941E11D6F490400275222 /* SwiftImageViewerExample */,
+				FA0941F41D6F490400275222 /* SwiftImageViewerExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA09419F1D6F44F600275222 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA0941A81D6F44F600275222 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA0941E01D6F490400275222 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA09421B1D6F4F3900275222 /* image4.jpg in Resources */,
+				FA0942171D6F4F3900275222 /* image0.jpg in Resources */,
+				FA0942181D6F4F3900275222 /* image1.jpg in Resources */,
+				FA0941EF1D6F490400275222 /* LaunchScreen.storyboard in Resources */,
+				FA0941EC1D6F490400275222 /* Assets.xcassets in Resources */,
+				FA0942191D6F4F3900275222 /* image2.jpg in Resources */,
+				FA09421A1D6F4F3900275222 /* image3.jpg in Resources */,
+				FA0941EA1D6F490400275222 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA0941F31D6F490400275222 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA09419C1D6F44F600275222 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA0941C61D6F452A00275222 /* SIVThrottledClosure.swift in Sources */,
+				FA0941C51D6F452A00275222 /* SIVScalingImageView.swift in Sources */,
+				FA0941DA1D6F47B400275222 /* MRProgressView.m in Sources */,
+				FA0941C21D6F452A00275222 /* CGRectExtension.swift in Sources */,
+				FA0941DD1D6F47B400275222 /* MRStopButton.m in Sources */,
+				FA0941C41D6F452A00275222 /* SIVImageViewController.swift in Sources */,
+				FA0941C71D6F452A00275222 /* SIVTypesDefinition.swift in Sources */,
+				FA0941C31D6F452A00275222 /* SIVDefaultImageLoadingView.swift in Sources */,
+				FA0941C81D6F452A00275222 /* UIImageViewExtension.swift in Sources */,
+				FA0941D71D6F47B400275222 /* MRIconView.m in Sources */,
+				FA0941D51D6F47B400275222 /* MRCircularProgressView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA0941A61D6F44F600275222 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA0941B01D6F44F600275222 /* SwiftImageViewerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA0941DE1D6F490400275222 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA09420C1D6F4E3900275222 /* ImageSources.swift in Sources */,
+				FA0942051D6F4D3100275222 /* ImagesViewController.swift in Sources */,
+				FA0941E51D6F490400275222 /* AppDelegate.swift in Sources */,
+				FA0942101D6F4EBA00275222 /* UIImage+Utility.swift in Sources */,
+				FA0942031D6F4BF400275222 /* RootTableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA0941F11D6F490400275222 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA0941FA1D6F490500275222 /* SwiftImageViewerExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA0941AD1D6F44F600275222 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA0941A01D6F44F600275222 /* SwiftImageViewer */;
+			targetProxy = FA0941AC1D6F44F600275222 /* PBXContainerItemProxy */;
+		};
+		FA0941F71D6F490400275222 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA0941E11D6F490400275222 /* SwiftImageViewerExample */;
+			targetProxy = FA0941F61D6F490400275222 /* PBXContainerItemProxy */;
+		};
+		FA0942091D6F4DE700275222 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA0941A01D6F44F600275222 /* SwiftImageViewer */;
+			targetProxy = FA0942081D6F4DE700275222 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FA0941E81D6F490400275222 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA0941E91D6F490400275222 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FA0941ED1D6F490400275222 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA0941EE1D6F490400275222 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FA0941B31D6F44F600275222 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FA0941B41D6F44F600275222 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FA0941B61D6F44F600275222 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SwiftImageViewer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.alex.SwiftImageViewer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		FA0941B71D6F44F600275222 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SwiftImageViewer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.alex.SwiftImageViewer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		FA0941B91D6F44F600275222 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SwiftImageViewerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.org.SwiftImageViewerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		FA0941BA1D6F44F600275222 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SwiftImageViewerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.org.SwiftImageViewerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		FA0941FD1D6F490500275222 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SwiftImageViewerExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.alex.SwiftImageViewerExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		FA0941FE1D6F490500275222 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SwiftImageViewerExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.alex.SwiftImageViewerExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		FA0942001D6F490500275222 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SwiftImageViewerExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.alex.SwiftImageViewerExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftImageViewerExample.app/SwiftImageViewerExample";
+			};
+			name = Debug;
+		};
+		FA0942011D6F490500275222 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SwiftImageViewerExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.alex.SwiftImageViewerExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftImageViewerExample.app/SwiftImageViewerExample";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA09419B1D6F44F600275222 /* Build configuration list for PBXProject "SwiftImageViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA0941B31D6F44F600275222 /* Debug */,
+				FA0941B41D6F44F600275222 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA0941B51D6F44F600275222 /* Build configuration list for PBXNativeTarget "SwiftImageViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA0941B61D6F44F600275222 /* Debug */,
+				FA0941B71D6F44F600275222 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA0941B81D6F44F600275222 /* Build configuration list for PBXNativeTarget "SwiftImageViewerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA0941B91D6F44F600275222 /* Debug */,
+				FA0941BA1D6F44F600275222 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA0941FC1D6F490500275222 /* Build configuration list for PBXNativeTarget "SwiftImageViewerExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA0941FD1D6F490500275222 /* Debug */,
+				FA0941FE1D6F490500275222 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FA0941FF1D6F490500275222 /* Build configuration list for PBXNativeTarget "SwiftImageViewerExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA0942001D6F490500275222 /* Debug */,
+				FA0942011D6F490500275222 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FA0941981D6F44F600275222 /* Project object */;
+}
