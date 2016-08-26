@@ -15,6 +15,7 @@ public class SIVImageViewController<ImageView:SIVImageViewType, LoadingView:SIVI
     /// Recommend only set one time
     public var source:SIVImageSourceType? {
         didSet {
+            loadToken += 1
             update(withSource: source)
         }
     }
@@ -22,6 +23,7 @@ public class SIVImageViewController<ImageView:SIVImageViewType, LoadingView:SIVI
     /// Set this property if you want custom behaviour on single tap of loading view and image view.
     public var singleTapHandler:SIVClosure?
     
+    private var loadToken = 0   // Source load token
     private func update(withSource source:SIVImageSourceType?){
         loadingView?.removeFromSuperview()  // Remove Loading view from superview.
         scrollView.image = nil              // Set scroll view to nil
@@ -71,12 +73,13 @@ public class SIVImageViewController<ImageView:SIVImageViewType, LoadingView:SIVI
         self.loadingView = _loadingView
         
         // Start loading the image.
-        
+        let loadToken = self.loadToken
         source.load(
             progress: {[weak _loadingView] progress in
                 _loadingView?.progress = progress
             },
             completion: {[weak _loadingView, weak self] result in
+                guard let _self = self, loadToken == _self.loadToken else { return }
                 // Let loading view do some animate with result (It might display fail or something).
                 if case let .success(image) = result {
                     self?.scrollView.image = image
@@ -129,7 +132,6 @@ public class SIVImageViewController<ImageView:SIVImageViewType, LoadingView:SIVI
     
     // Common initialization
     private func commonInit(){
-        automaticallyAdjustsScrollViewInsets = false
         // When image view zoomed, hide
         scrollView.beginZoomingHandler = {[weak self] in
             // Hide
