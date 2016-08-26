@@ -83,6 +83,28 @@ Please check example project.
    
    You only need to write some kind of *`Wrapper Type`* that conforms `SIVImageSourceType`. 
    
+   A simple `UIImage` wrapper type is like this
+   ```Swift
+   // MARK: Immediate Image Source
+   struct ImmediateImageSource{
+      var image:UIImage
+   }
+
+   extension ImmediateImageSource: SIVImageSourceType {
+      var loadedImage:SIVImage?{
+        return .image(image)
+      }
+      var previewImage:SIVImage?{
+        return nil
+      }
+    
+      func load(progress: ((Double) -> ())?, completion: ((SIVImageLoadResult) -> ())) {
+        progress?(1.0)
+        completion(.success(.image(image)))
+      }
+   }
+   ```
+   
    Check `DelayedImageSource` struct in example project to get idea about this.
    
 -  Can use other view type than `UIImageView` to display image (e.g. [FLAnimatedImageView](https://github.com/Flipboard/FLAnimatedImage) )
