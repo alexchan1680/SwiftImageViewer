@@ -6,7 +6,7 @@
 
 import UIKit
 
-public class SIVScalingImageView<T where T:UIView, T:SIVImageViewType>: UIScrollView, UIScrollViewDelegate{
+public class SIVScalingImageView<T where T:SIVImageViewType, T:UIView>: UIScrollView, UIScrollViewDelegate{
     public var image:SIVImage?{
         didSet {
             precondition(Thread.isMainThread, "This property should be accessed on main thread.")
