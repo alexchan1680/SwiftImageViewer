@@ -53,7 +53,7 @@ public class SIVDefaultImageLoadingView:UIView, SIVImageLoadingIndicatorViewType
     }
     
     // MARK: - Initializers
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
