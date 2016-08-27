@@ -22,7 +22,7 @@ public enum SIVImage{
     case image(UIImage)
     case data(Data, CGSize)
     
-    // Imag Size
+    // Image Size
     internal var size:CGSize {
         switch self {
         case let image(img):
@@ -75,12 +75,21 @@ public enum SIVImageLoadingIndicatorViewSize{
     case fullScreen         // Full Screen
     case centered(CGSize)   // Cenetered with size
     
-    var autoresizingMask:UIViewAutoresizing {
+    public var autoresizingMask:UIViewAutoresizing {
         switch self {
         case .fullScreen:
             return [.flexibleWidth, .flexibleHeight]
         case .centered(_):
             return [.flexibleLeftMargin, .flexibleRightMargin, .flexibleTopMargin, .flexibleBottomMargin]
+        }
+    }
+    
+    public func frame(bounds:CGRect) -> CGRect{
+        switch self {
+        case .fullScreen:
+            return bounds
+        case let .centered(size):
+            return bounds.centeredRect(size: size)
         }
     }
 }

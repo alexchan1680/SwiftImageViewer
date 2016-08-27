@@ -42,15 +42,7 @@ public class SIVImageViewController<ImageView, LoadingView where ImageView:SIVIm
         }
         
         // Create Loading View
-        var _loadingView:LoadingView!
-        // Update auto resizing mask and layout loading view with layout size again.
-        if case let .centered(size) = LoadingView.layoutSize {
-            // put loading view center
-            _loadingView = LoadingView(frame: view.bounds.centeredRect(size: size))
-        } else {
-            // put loading view center
-            _loadingView = LoadingView(frame: view.bounds)
-        }
+        let _loadingView:LoadingView = LoadingView(frame: LoadingView.layoutSize.frame(bounds: view.bounds))
         _loadingView.autoresizingMask = LoadingView.layoutSize.autoresizingMask
         
         // Configure loading view
