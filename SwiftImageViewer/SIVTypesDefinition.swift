@@ -68,7 +68,10 @@ public protocol SIVImageSourceType {
     var previewImage:SIVImage? { get }   // Ability to support preview image
     
     /// Load function with progress and result report.
-    func load(progress:((Double) -> ())?, completion:((SIVImageLoadResult) -> ()))
+    func load(progress:(Double) -> (), completion:(SIVImageLoadResult) -> ())
+    
+    /// Cancel load
+    func cancel()
 }
 
 public enum SIVImageLoadingIndicatorViewSize{

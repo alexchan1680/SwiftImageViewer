@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA08EF241D71622C000A8867 /* UIImageSIVImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08EF231D71622C000A8867 /* UIImageSIVImageSource.swift */; };
 		FA0941AB1D6F44F600275222 /* SwiftImageViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0941A11D6F44F600275222 /* SwiftImageViewer.framework */; };
 		FA0941B01D6F44F600275222 /* SwiftImageViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0941AF1D6F44F600275222 /* SwiftImageViewerTests.swift */; };
 		FA0941B21D6F44F600275222 /* SwiftImageViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = FA0941A41D6F44F600275222 /* SwiftImageViewer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -84,6 +85,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FA08EF231D71622C000A8867 /* UIImageSIVImageSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageSIVImageSource.swift; sourceTree = "<group>"; };
 		FA0941A11D6F44F600275222 /* SwiftImageViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftImageViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA0941A41D6F44F600275222 /* SwiftImageViewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftImageViewer.h; sourceTree = "<group>"; };
 		FA0941A51D6F44F600275222 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				FA0941BE1D6F452A00275222 /* SIVScalingImageView.swift */,
 				FA0941BF1D6F452A00275222 /* SIVThrottledClosure.swift */,
 				FA0941C01D6F452A00275222 /* SIVTypesDefinition.swift */,
+				FA08EF231D71622C000A8867 /* UIImageSIVImageSource.swift */,
 				FA0941C11D6F452A00275222 /* UIImageViewExtension.swift */,
 				FA0941A41D6F44F600275222 /* SwiftImageViewer.h */,
 				FA0941A51D6F44F600275222 /* Info.plist */,
@@ -464,6 +467,7 @@
 				FA0941DA1D6F47B400275222 /* MRProgressView.m in Sources */,
 				FA0941C21D6F452A00275222 /* CGRectExtension.swift in Sources */,
 				FA0941DD1D6F47B400275222 /* MRStopButton.m in Sources */,
+				FA08EF241D71622C000A8867 /* UIImageSIVImageSource.swift in Sources */,
 				FA0941C41D6F452A00275222 /* SIVImageViewController.swift in Sources */,
 				FA0941C71D6F452A00275222 /* SIVTypesDefinition.swift in Sources */,
 				FA0941C31D6F452A00275222 /* SIVDefaultImageLoadingView.swift in Sources */,
@@ -790,6 +794,7 @@
 				FA0941FE1D6F490500275222 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA0941FF1D6F490500275222 /* Build configuration list for PBXNativeTarget "SwiftImageViewerExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -798,6 +803,7 @@
 				FA0942011D6F490500275222 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

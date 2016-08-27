@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftImageViewer
 
 class RootTableViewController: UITableViewController {
     // Menu
@@ -28,7 +29,7 @@ class RootTableViewController: UITableViewController {
         guard let menu = Menu(rawValue: indexPath.row) else { return }
         switch menu {
         case .immediate:
-            vc.images = images.map{ImmediateImageSource(image: $0)}
+            vc.images = images.map{UIImageSIVImageSource(image: $0)}
         case .delayed:
             vc.images = images.map{DelayedImageSource(image: $0)}
         }
