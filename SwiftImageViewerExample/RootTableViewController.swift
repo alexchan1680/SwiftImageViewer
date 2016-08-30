@@ -23,7 +23,7 @@ class RootTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = ImagesViewController(nibName: nil, bundle: nil)
-        vc.view.frame = UIScreen.main().bounds
+        vc.view.frame = UIScreen.main.bounds
         vc.automaticallyAdjustsScrollViewInsets = false
         
         guard let menu = Menu(rawValue: indexPath.row) else { return }

@@ -26,7 +26,7 @@ public class SIVDefaultImageLoadingView:UIView, SIVImageLoadingIndicatorViewType
         switch result {
         case .success(_):
             _ = createSucceedView()
-            DispatchQueue.main.after(when: .now() + .milliseconds(800)){
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(800)){
                 UIView.animate(withDuration: 0.5, animations:{
                     self.alpha = 0.0
                 }){_ in
@@ -40,7 +40,7 @@ public class SIVDefaultImageLoadingView:UIView, SIVImageLoadingIndicatorViewType
             let failedView = createFailedView()
             let button = createReloadButton()
             button.alpha = 0.0
-            DispatchQueue.main.after(when: .now() + .milliseconds(800)){
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(800)){
                 UIView.animate(withDuration: 0.5, animations: {
                     failedView.alpha = 0.0
                     button.alpha = 1.0
@@ -64,7 +64,7 @@ public class SIVDefaultImageLoadingView:UIView, SIVImageLoadingIndicatorViewType
     }
     
     func commonInit(){
-        backgroundColor = .clear()
+        backgroundColor = .clear
         
         // Add Gesture recognizer to this view.
         addGestureRecognizer(singleTapGestureRecognizer)
@@ -97,7 +97,7 @@ public class SIVDefaultImageLoadingView:UIView, SIVImageLoadingIndicatorViewType
     private func createProgressView() -> MRProgressView {
         let progressView = MRCircularProgressView(frame: bounds.insetBy(dx: viewsInset.width, dy: viewsInset.height))
         progressView.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin, .flexibleBottomMargin, .flexibleTopMargin]
-        progressView.tintColor = .white()
+        progressView.tintColor = .white
         progressView.lineWidth = 3.0
         addSubview(progressView)
         return progressView
@@ -106,7 +106,7 @@ public class SIVDefaultImageLoadingView:UIView, SIVImageLoadingIndicatorViewType
     private func createFailedView() -> MRCrossIconView {
         let failedView = MRCrossIconView(frame: bounds.insetBy(dx: viewsInset.width, dy: viewsInset.height))
         failedView.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin, .flexibleBottomMargin, .flexibleTopMargin]
-        failedView.tintColor = .white()
+        failedView.tintColor = .white
         failedView.lineWidth = 2.0
         addSubview(failedView)
         return failedView
@@ -115,7 +115,7 @@ public class SIVDefaultImageLoadingView:UIView, SIVImageLoadingIndicatorViewType
     private func createSucceedView() -> MRCheckmarkIconView {
         let succeedView = MRCheckmarkIconView(frame: bounds.insetBy(dx: viewsInset.width, dy: viewsInset.height))
         succeedView.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin, .flexibleBottomMargin, .flexibleTopMargin]
-        succeedView.tintColor = .white()
+        succeedView.tintColor = .white
         succeedView.lineWidth = 2.0
         addSubview(succeedView)
         return succeedView
@@ -126,7 +126,7 @@ public class SIVDefaultImageLoadingView:UIView, SIVImageLoadingIndicatorViewType
         let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
         blurView.frame = bounds
         blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        blurView.layer.borderColor = UIColor.clear().cgColor
+        blurView.layer.borderColor = UIColor.clear.cgColor
         blurView.layer.masksToBounds = true
         blurView.layer.cornerRadius = 6.0
         
@@ -137,7 +137,7 @@ public class SIVDefaultImageLoadingView:UIView, SIVImageLoadingIndicatorViewType
     private func createReloadButton() -> UIButton {
         let button = UIButton(type: .system)
         button.setTitle("RELOAD", for: [.normal])
-        button.tintColor = .white()
+        button.tintColor = .white
         button.sizeToFit()
         addSubview(button)
         button.center = bounds.center

@@ -24,7 +24,7 @@ class SIVThrottledClosure {
             prev_source.cancel()
         }
         
-        let source = DispatchSource.timer(queue: .main)
+        let source = DispatchSource.makeTimerSource(queue: .main)
         source.scheduleOneshot(deadline: .now() + .milliseconds(Int(interval * 1000)))
         source.setEventHandler{[weak self] in
             self?.closure()

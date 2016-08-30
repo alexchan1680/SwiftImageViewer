@@ -23,7 +23,7 @@ extension UIImageSIVImageSource: SIVImageSourceType {
         return nil
     }
     
-    public func load(progress: (Double) -> (), completion: (SIVImageLoadResult) -> ()) {
+    public func load(progress: @escaping (Double) -> (), completion: @escaping (SIVImageLoadResult) -> ()) {
         progress(1.0)
         completion(.success(.image(image)))
     }

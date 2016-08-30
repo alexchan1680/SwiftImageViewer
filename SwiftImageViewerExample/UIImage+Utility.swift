@@ -112,7 +112,7 @@ extension UIImage{
         let offscreenContext = CGContext(data: nil, width: width, height: height, bitsPerComponent: 8, bytesPerRow: 0, space: imageRef.colorSpace!, bitmapInfo: bitmapInfo.rawValue)
         
         // Draw the image into the context and retrieve the new image, which will now have an alpha layer
-        offscreenContext?.draw(in: CGRect(x: 0, y: 0, width: width, height: height), image: imageRef)
+        offscreenContext?.draw(imageRef, in: CGRect(x: 0, y: 0, width: width, height: height))
         guard let imageRefWithAlpha = offscreenContext?.makeImage() else {
             return nil
         }
@@ -142,7 +142,7 @@ extension UIImage{
                                bitmapInfo: cgImage.bitmapInfo.rawValue)
         
         let imageLocation = CGRect(x: borderSize, y: borderSize, width: image.size.width, height: image.size.height)
-        bitmap?.draw(in: imageLocation, image: cgImage)
+        bitmap?.draw(cgImage, in: imageLocation)
         
         let borderImageRef = bitmap?.makeImage()
         
@@ -157,7 +157,7 @@ extension UIImage{
     /// Creates a mask that makes the outer edges transparent and everything else opaque
     /// The size must include the entire mask (opaque part + transparent border)
     /// The caller is responsible for releasing the returned reference by calling CGImageRelease
-    private func newBorderMask(borderSize:CGFloat, size:CGSize) -> CGImage?{
+    fileprivate func newBorderMask(borderSize:CGFloat, size:CGSize) -> CGImage?{
         let colorSpace = CGColorSpaceCreateDeviceGray()
         let maskContext = CGContext(data: nil,
                                     width: Int(size.width),
@@ -169,11 +169,11 @@ extension UIImage{
         )
         
         // Start with a mask that's entirely transparent
-        maskContext?.setFillColor(UIColor.black().cgColor)
+        maskContext?.setFillColor(UIColor.black.cgColor)
         maskContext?.fill(CGRect(x: 0, y: 0, width: size.width, height: size.height))
         
         // Make the inner part (within the border) opaque
-        maskContext?.setFillColor(UIColor.white().cgColor)
+        maskContext?.setFillColor(UIColor.white.cgColor)
         maskContext?.fill(CGRect(x: borderSize, y: borderSize, width: size.width - borderSize * 2, height: size.height - borderSize * 2))
         
         return maskContext?.makeImage()
@@ -250,7 +250,7 @@ extension UIImage{
     /// Returns a copy of the image that has been transformed using the given affine transform and scaled to the new size
     /// The new image's orientation will be UIImageOrientationUp, regardless of the current image's orientation
     /// If the new size is not integral, it will be rounded up
-    private func resized(to newSize:CGSize, transform:CGAffineTransform, drawTransposed transpose:Bool, interpolationQuality quality:CGInterpolationQuality) -> UIImage?{
+    fileprivate func resized(to newSize:CGSize, transform:CGAffineTransform, drawTransposed transpose:Bool, interpolationQuality quality:CGInterpolationQuality) -> UIImage?{
         guard let cgImage = cgImage_ else{
             return nil
         }
@@ -268,13 +268,13 @@ extension UIImage{
                                bitmapInfo: cgImage.bitmapInfo.rawValue);
         
         // Rotate and/or flip the image if required by its orientation
-        bitmap?.concatCTM(transform);
+        bitmap?.concatenate(transform)
         
         // Set the quality level to use when rescaling
         bitmap!.interpolationQuality = quality;
         
         // Draw into the context; this scales the image
-        bitmap?.draw(in: transpose ? transposedRect : newRect, image: cgImage);
+        bitmap?.draw(cgImage, in: transpose ? transposedRect : newRect)
         
         // Get the resized image from the context and a UIImage
         guard let newImageRef = bitmap?.makeImage() else{
@@ -283,31 +283,31 @@ extension UIImage{
         return UIImage(cgImage: newImageRef)
     }
     
-    private func transformConsideringOrientation(to newSize:CGSize) -> CGAffineTransform{
+    fileprivate func transformConsideringOrientation(to newSize:CGSize) -> CGAffineTransform{
         var transform = CGAffineTransform.identity
         switch imageOrientation {
         case .down, .downMirrored: // EXIF = 3, EXIF = 4
-            transform = transform.translateBy(x: newSize.width, y: newSize.height)
-            transform = transform.rotate(CGFloat(M_PI))
+            transform = transform.translatedBy(x: newSize.width, y: newSize.height)
+            transform = transform.rotated(by: CGFloat(M_PI))
             
         case .left, .leftMirrored:  // EXIF = 6, EXIF = 5
-            transform = transform.translateBy(x: newSize.width, y: 0)
-            transform = transform.rotate(CGFloat(M_PI_2))
+            transform = transform.translatedBy(x: newSize.width, y: 0)
+            transform = transform.rotated(by: CGFloat(M_PI_2))
             
         case .right, .rightMirrored:
-            transform = transform.translateBy(x: 0, y: newSize.height)
-            transform = transform.rotate(CGFloat(-M_PI_2))
+            transform = transform.translatedBy(x: 0, y: newSize.height)
+            transform = transform.rotated(by: CGFloat(-M_PI_2))
         default:
             break
         }
         
         switch imageOrientation{
         case .upMirrored, .downMirrored: // EXIF = 2, EXIF = 4
-            transform = transform.translateBy(x: newSize.width, y: 0)
-            transform = transform.scaleBy(x: -1, y: 1)
+            transform = transform.translatedBy(x: newSize.width, y: 0)
+            transform = transform.scaledBy(x: -1, y: 1)
         case .leftMirrored, .rightMirrored:
-            transform = transform.translateBy(x: newSize.height, y: 0)
-            transform = transform.scaleBy(x: -1, y: 1)
+            transform = transform.translatedBy(x: newSize.height, y: 0)
+            transform = transform.scaledBy(x: -1, y: 1)
         default:
             break
         }
@@ -346,7 +346,7 @@ extension UIImage {
         context?.closePath()
         context?.clip()
         
-        context?.draw(in: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height), image: cgImage)
+        context?.draw(cgImage, in: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
         
         guard let clippedImage = context?.makeImage() else {
             return nil
@@ -364,15 +364,17 @@ extension UIImage {
             return
         }
         context?.saveGState()
-        context?.translate(x: rect.minX, y: rect.minY)
-        context?.scale(x: ovalWidth, y: ovalHeight)
+        context?.translateBy(x: rect.minX, y: rect.minY)
+        context?.scaleBy(x: ovalWidth, y: ovalHeight)
         let fw = rect.width / ovalWidth
         let fh = rect.height / ovalHeight
-        context?.moveTo(x: fw, y: fh/2)
-        context?.addArc(x1: fw, y1: fh, x2: fw/2, y2: fh, radius: 1)
-        context?.addArc(x1: 0, y1: fh, x2: 0, y2: fh/2, radius: 1)
-        context?.addArc(x1: 0, y1: 0, x2: fw/2, y2: 0, radius: 1)
-        context?.addArc(x1: fw, y1: 0, x2: fw, y2: fh/2, radius: 1)
+        
+        context?.move(to: CGPoint(x: fw, y: fh/2))
+        context?.addArc(tangent1End: CGPoint(x:fw, y:fh), tangent2End: CGPoint(x:fw/2, y:fh), radius: 1)
+        context?.addArc(tangent1End: CGPoint(x:0, y:fh), tangent2End: CGPoint(x:0, y:fh/2), radius: 1)
+        context?.addArc(tangent1End: CGPoint(x:0, y:0), tangent2End: CGPoint(x:fw/2, y:0), radius: 1)
+        context?.addArc(tangent1End: CGPoint(x:fw, y:0), tangent2End: CGPoint(x:fw, y:fh/2), radius: 1)
+        
         context?.closePath()
         context?.restoreGState()
     }
@@ -404,13 +406,13 @@ extension UIImage {
             bitmapInfo: cgImage.bitmapInfo.rawValue
         )
         
-        ctx?.concatCTM(transform)
+        ctx?.concatenate(transform)
         
         switch imageOrientation{
         case .left, .leftMirrored, .right, .rightMirrored:
-            ctx?.draw(in: CGRect(x: 0, y: 0, width: size.height, height: size.width), image: cgImage)
+            ctx?.draw(cgImage, in: CGRect(x: 0, y: 0, width: size.height, height: size.width))
         default:
-            ctx?.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height), image: cgImage)
+            ctx?.draw(cgImage, in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
         }
         
         guard let rotatedCGImage = ctx?.makeImage() else{

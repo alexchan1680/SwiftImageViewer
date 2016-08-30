@@ -8,7 +8,7 @@ import UIKit
 
 public typealias SIVDefaultImageViewController = SIVImageViewController<UIImageView, SIVDefaultImageLoadingView>
 
-public class SIVImageViewController<ImageView, LoadingView where ImageView:SIVImageViewType, LoadingView:SIVImageLoadingIndicatorViewType, ImageView:UIView, LoadingView:UIView>: UIViewController {
+public class SIVImageViewController<ImageView, LoadingView>: UIViewController where ImageView:SIVImageViewType, LoadingView:SIVImageLoadingIndicatorViewType, ImageView:UIView, LoadingView:UIView {
     /// Control bars visibility handler (e.g. navigation bar or tool bar for image view controller or page view controller)
     public var barVisibilityHandler:((SIVBarVisibilitySignal) -> ())?
     

@@ -6,7 +6,7 @@
 
 import UIKit
 
-public class SIVScalingImageView<T where T:SIVImageViewType, T:UIView>: UIScrollView, UIScrollViewDelegate{
+public class SIVScalingImageView<T>: UIScrollView, UIScrollViewDelegate where T:SIVImageViewType, T:UIView{
     public var image:SIVImage?{
         didSet {
             precondition(Thread.isMainThread, "This property should be accessed on main thread.")
@@ -42,7 +42,7 @@ public class SIVScalingImageView<T where T:SIVImageViewType, T:UIView>: UIScroll
     }()
     
     private func internalInit(){
-        backgroundColor = .clear()
+        backgroundColor = .clear
         delegate = self
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
@@ -126,7 +126,7 @@ public class SIVScalingImageView<T where T:SIVImageViewType, T:UIView>: UIScroll
         
         isScrollEnabled = false
         var maxScale = CGFloat(3)
-        if case .pad = UIDevice.current().userInterfaceIdiom {
+        if case .pad = UIDevice.current.userInterfaceIdiom {
             maxScale = 4
         }
         

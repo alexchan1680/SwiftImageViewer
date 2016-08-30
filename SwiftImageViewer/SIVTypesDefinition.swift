@@ -25,18 +25,18 @@ public enum SIVImage{
     // Image Size
     internal var size:CGSize {
         switch self {
-        case let image(img):
+        case let .image(img):
             return img.size
-        case let data(_, sz):
+        case let .data(_, sz):
             return sz
         }
     }
     
     internal func toUIImage() -> UIImage?{
         switch self {
-        case let image(img):
+        case let .image(img):
             return img
-        case let data(dt, _):
+        case let .data(dt, _):
             return UIImage(data: dt)
         }
     }
@@ -54,7 +54,7 @@ public protocol SIVImageViewType: class {
 /// Image Load Result with success & failed
 public enum SIVImageLoadResult{
     case success(SIVImage)
-    case failed(ErrorProtocol?)
+    case failed(Error?)
 }
 
 /*
@@ -68,7 +68,7 @@ public protocol SIVImageSourceType {
     var previewImage:SIVImage? { get }   // Ability to support preview image
     
     /// Load function with progress and result report.
-    func load(progress:(Double) -> (), completion:(SIVImageLoadResult) -> ())
+    func load(progress: @escaping (Double) -> (), completion:@escaping (SIVImageLoadResult) -> ())
     
     /// Cancel load
     func cancel()

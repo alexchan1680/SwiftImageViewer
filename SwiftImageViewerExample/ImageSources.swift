@@ -30,8 +30,8 @@ extension DelayedImageSource: SIVImageSourceType {
         return image.scaled(toMaxDimension: 300).flatMap{.image($0)}
     }
     
-    func load(progress: (Double) -> (), completion: (SIVImageLoadResult) -> ()) {
-        let source = DispatchSource.timer(queue: .main)
+    func load(progress: @escaping (Double) -> (), completion: @escaping (SIVImageLoadResult) -> ()) {
+        let source = DispatchSource.makeTimerSource(queue: .main)
         var pg:Double = 0
         
         // Update every 200 ms
