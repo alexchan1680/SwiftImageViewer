@@ -64,9 +64,13 @@ class ImagesViewController: UIViewController {
             }
             addChildViewController(imageVC)
             
+            imageVC.view.frame = view.frame
+            imageVC.view.translatesAutoresizingMaskIntoConstraints = true
+            imageVC.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            
             view.addSubview(imageVC.view)
-            imageVC.view.translatesAutoresizingMaskIntoConstraints = false
-            imageVC.view.alignEdges(to: view)
+            
+            //imageVC.view.alignEdges(to: view)
             
             imageVC.didMove(toParentViewController: self)
             currentImageVC = imageVC

@@ -12,7 +12,7 @@ class SIVThrottledClosure {
     private let interval: TimeInterval
     private var prev_source:DispatchSourceTimer?
     
-    init (interval:TimeInterval, closure:SIVClosure){
+    init (interval:TimeInterval, closure:@escaping SIVClosure){
         self.closure = closure
         self.interval = interval
     }

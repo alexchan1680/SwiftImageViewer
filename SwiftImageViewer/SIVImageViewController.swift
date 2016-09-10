@@ -87,6 +87,8 @@ public class SIVImageViewController<ImageView, LoadingView>: UIViewController wh
     // ScrollView for showing scaling image view.
     public lazy var scrollView:SIVScalingImageView<ImageView> = {[unowned self] in
         let scrollView = SIVScalingImageView<ImageView>(frame:CGRect(origin:.zero, size:self.view.frame.size))
+        scrollView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        scrollView.translatesAutoresizingMaskIntoConstraints = true
         self.view.addSubview(scrollView)
         self.view.sendSubview(toBack: scrollView)
         return scrollView
