@@ -125,9 +125,9 @@ public class SIVScalingImageView<T>: UIScrollView, UIScrollViewDelegate where T:
         var minScale = min(xScale, yScale)
         
         isScrollEnabled = false
-        var maxScale = CGFloat(3)
+        var maxScale = CGFloat(1)
         if case .pad = UIDevice.current.userInterfaceIdiom {
-            maxScale = 4
+            maxScale = 1
         }
         
         // Image is smaller than screen, so no zooming.
